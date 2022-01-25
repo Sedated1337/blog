@@ -11,6 +11,7 @@
       <div class="post_content">
         <%= image_tag post.image %>
         <p><%= post.content %></p>
+        <p>Views: <%= post.post_views_count%> </p>
       </div>
       <%= link_to 'Show', post %>
       <%= link_to 'Edit', edit_post_path(post) %>

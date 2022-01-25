@@ -13,6 +13,8 @@ class PostsController < ApplicationController
                 else
                   @post.comments.published
                 end
+    @post.post_views_count += 1
+    @post.save
   end
 
   # GET /posts/new
