@@ -4,10 +4,6 @@ class Comment < ApplicationRecord
   belongs_to :author
   validates :body, presence: true
 
-  scope :unpublished, -> { where(status: 'unpublished') }
-  scope :published, -> { where(status: 'published') }
-
   enum status: %i[unpublished published]
 
 end
-

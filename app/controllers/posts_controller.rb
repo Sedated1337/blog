@@ -8,6 +8,11 @@ class PostsController < ApplicationController
 
   # GET /posts/1 or /posts/1.json
   def show
+    @comments = if params[:unpublished_comments]
+                  @post.comments.unpublished
+                else
+                  @post.comments.published
+                end
   end
 
   # GET /posts/new
